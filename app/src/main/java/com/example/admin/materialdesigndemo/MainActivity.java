@@ -13,25 +13,39 @@ import android.view.View;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
-    Toolbar toolbar;
-    TabLayout tabLayout;
-    ViewPager viewPager;
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
+public class MainActivity extends AppCompatActivity {
     List<String> stringList;
     List<Fragment> fragmentList;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
+    @BindView(R.id.tablayout)
+    TabLayout tablayout;
+    @BindView(R.id.view_pager)
+    ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        tabLayout = (TabLayout) findViewById(R.id.tablayout);
+        ButterKnife.bind(this);
+        initDate();
+        initView();
+    }
+
+    private void initView() {
         setSupportActionBar(toolbar);
-        viewPager = (ViewPager) findViewById(R.id.view_pager);
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 1"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 2"));
-        tabLayout.addTab(tabLayout.newTab().setText("Tab 3"));
+        tablayout.addTab(tablayout.newTab().setText("Tab 1"));
+        tablayout.addTab(tablayout.newTab().setText("Tab 2"));
+        tablayout.addTab(tablayout.newTab().setText("Tab 3"));
+        ViewPagerAdapter vpAdapter = new ViewPagerAdapter(getSupportFragmentManager(), fragmentList, stringList);
+        viewPager.setAdapter(vpAdapter);
+        tablayout.setupWithViewPager(viewPager);
+    }
+
+    private void initDate() {
         fragmentList = new ArrayList<>();
         fragmentList.add(new BaseFragment());
         fragmentList.add(new BaseFragment());
@@ -40,9 +54,6 @@ public class MainActivity extends AppCompatActivity {
         stringList.add("1111");
         stringList.add("2222");
         stringList.add("3333");
-        ViewPagerAdapter vpAdapter = new ViewPagerAdapter(getSupportFragmentManager(),fragmentList,stringList );
-        viewPager.setAdapter(vpAdapter);
-        tabLayout.setupWithViewPager(viewPager);
     }
 
     private void snackShow(FloatingActionButton fAButton) {
