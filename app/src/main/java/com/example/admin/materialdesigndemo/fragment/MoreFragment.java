@@ -1,4 +1,4 @@
-package com.example.admin.materialdesigndemo;
+package com.example.admin.materialdesigndemo.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -7,12 +7,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.admin.materialdesigndemo.R;
+
 /**
- * Created by zq on 2017/9/14.
+ * Created by zq on 2017/9/15.
  */
 
-public class BaseFragment extends Fragment {
-
+public class MoreFragment extends Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {

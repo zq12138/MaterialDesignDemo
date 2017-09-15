@@ -10,6 +10,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.example.admin.materialdesigndemo.fragment.HomeFragment;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -47,9 +49,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void initDate() {
         fragmentList = new ArrayList<>();
-        fragmentList.add(new BaseFragment());
-        fragmentList.add(new BaseFragment());
-        fragmentList.add(new BaseFragment());
+        fragmentList.add(new HomeFragment());
+        fragmentList.add(new HomeFragment());
+        fragmentList.add(new HomeFragment());
         stringList = new ArrayList<>();
         stringList.add("1111");
         stringList.add("2222");

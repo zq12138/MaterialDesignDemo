@@ -21,7 +21,6 @@
                 android:id="@+id/collapsingToolbarLayout"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:contentScrim="?attr/colorPrimary"
                 app:expandedTitleMarginStart="64dp"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
@@ -40,8 +39,7 @@
                     android:layout_height="?attr/actionBarSize"
                     android:layout_marginTop="@dimen/margin_top"
                     android:background="#00000000"
-                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+                 />
             </android.support.design.widget.CollapsingToolbarLayout>
         </android.support.design.widget.AppBarLayout>
 
@@ -56,24 +54,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical">
-
-                <android.support.design.widget.TabLayout
-                    android:id="@+id/tablayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:background="@color/colorAccent"
-                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-
-                    >
-
-                </android.support.design.widget.TabLayout>
-
-                <android.support.v4.view.ViewPager
-                    android:id="@+id/view_pager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                </android.support.v4.view.ViewPager>
 
             </LinearLayout>
 

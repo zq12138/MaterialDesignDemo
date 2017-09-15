@@ -1,0 +1,24 @@
+<tabs>
+    <tab
+        activeColor="#2DA6DF"
+        icon="@drawable/home_selected"
+        id="@+id/tab_home"
+        title="Favorites" />
+    <tab
+        activeColor="#2DA6DF"
+        icon="@drawable/list_selected"
+        id="@+id/tab_list"
+        title="Nearby" />
+    <tab
+        activeColor="#2DA6DF"
+        badgeHidesWhenActive="true"
+        icon="@drawable/person_selected"
+        id="@+id/tab_person"
+        title="Friends" />
+    <tab
+        activeColor="#2DA6DF"
+        badgeHidesWhenActive="true"
+        icon="@drawable/more_selected"
+        id="@+id/tab_more"
+        title="Friends" />
+</tabs>
