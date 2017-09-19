@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.admin.materialdesigndemo.R;
 import com.example.admin.materialdesigndemo.ViewPagerAdapter;
+import com.example.admin.materialdesigndemo.fragment.project.ProjectFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +21,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 /**
- * Created by zq on 2017/9/15.
+ * Created by zq on 2017/9/15.项目
  */
 
 public class ListFragment extends Fragment {
@@ -58,7 +59,7 @@ public class ListFragment extends Fragment {
 
     private void initDate() {
         fragmentList = new ArrayList<>();
-        fragmentList.add(new MoreFragment());
+        fragmentList.add(new ProjectFragment());
         fragmentList.add(new MoreFragment());
         fragmentList.add(new MoreFragment());
         stringList = new ArrayList<>();
