@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import com.example.admin.materialdesigndemo.R;
 import com.example.admin.materialdesigndemo.ViewPagerAdapter;
+import com.example.admin.materialdesigndemo.fragment.project.CreditorFragment;
+import com.example.admin.materialdesigndemo.fragment.project.FundFragment;
 import com.example.admin.materialdesigndemo.fragment.project.ProjectFragment;
 
 import java.util.ArrayList;
@@ -60,8 +62,8 @@ public class ListFragment extends Fragment {
     private void initDate() {
         fragmentList = new ArrayList<>();
         fragmentList.add(new ProjectFragment());
-        fragmentList.add(new MoreFragment());
-        fragmentList.add(new MoreFragment());
+        fragmentList.add(new CreditorFragment());
+        fragmentList.add(new FundFragment());
         stringList = new ArrayList<>();
         stringList.add("投资项目");
         stringList.add("债权转让");

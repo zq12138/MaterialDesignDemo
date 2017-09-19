@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import com.example.admin.materialdesigndemo.R;
 
+import java.util.List;
+
 /**
  * Created by zq on 2017/9/18.
  */
@@ -17,12 +19,12 @@ import com.example.admin.materialdesigndemo.R;
 public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHolder> {
 
 
-    public String[] listString;
+    public List<String> listString;
     public boolean[] flag;
 
-    public ProjectAdapter(String[] listString) {
-        this.listString = listString;
-        flag = new boolean[listString.length];
+    public ProjectAdapter(List<String> list) {
+        this.listString = list;
+        flag = new boolean[listString.size()];
     }
 
     @Override
@@ -42,13 +44,13 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.ViewHold
                 flag[position] = isChecked;
             }
         });
-        holder.textView.setText(listString[position]);
+        holder.textView.setText(listString.get(position));
 
     }
 
     @Override
     public int getItemCount() {
-        return listString.length;
+        return listString.size();
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {

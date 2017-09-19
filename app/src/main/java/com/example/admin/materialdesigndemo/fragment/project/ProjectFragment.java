@@ -11,6 +11,11 @@ import android.view.ViewGroup;
 
 import com.example.admin.materialdesigndemo.R;
 import com.example.admin.materialdesigndemo.fragment.adapter.ProjectAdapter;
+import com.example.admin.materialdesigndemo.util.DataUtil;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,7 +30,8 @@ public class ProjectFragment extends Fragment {
     @BindView(R.id.recycler)
     RecyclerView recycler;
     Unbinder unbinder;
-    String[] strlist = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "1", "2", "3", "4", "5"};
+    @BindView(R.id.refreshLayout)
+    SmartRefreshLayout refreshLayout;
     LinearLayoutManager mLayoutManager;
 
     @Nullable
@@ -33,14 +39,34 @@ public class ProjectFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.project_layout, null);
         unbinder = ButterKnife.bind(this, view);
+        initRefresh();
+        initRecycler();
+        return view;
+    }
+
+    private void initRecycler() {
         mLayoutManager = new LinearLayoutManager(getActivity());
         recycler.setLayoutManager(mLayoutManager);
-//如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
+        //如果可以确定每个item的高度是固定的，设置这个选项可以提高性能
         recycler.setHasFixedSize(true);
-//创建并设置Adapter
-        ProjectAdapter projectAdapter = new ProjectAdapter(strlist);
+        //创建并设置Adapter
+        ProjectAdapter projectAdapter = new ProjectAdapter(DataUtil.getListData());
         recycler.setAdapter(projectAdapter);
-        return view;
+    }
+
+    private void initRefresh() {
+        refreshLayout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(RefreshLayout refreshlayout) {
+                refreshlayout.finishRefresh(2000);
+            }
+        });
+        refreshLayout.setOnLoadmoreListener(new OnLoadmoreListener() {
+            @Override
+            public void onLoadmore(RefreshLayout refreshlayout) {
+                refreshlayout.finishLoadmore(2000);
+            }
+        });
     }
 
     @Override
