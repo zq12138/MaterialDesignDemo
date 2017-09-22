@@ -61,6 +61,7 @@ public class HomeActivity extends AppCompatActivity {
         initView();
 
     }
+
     private void initView() {
         bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
             @Override
@@ -73,10 +74,10 @@ public class HomeActivity extends AppCompatActivity {
                         switchToListPageFragment();
                         break;
                     case R.id.tab_person:
-                        switchToPersonPageFragment();
+                        switchToMorePageFragment();
                         break;
                     case R.id.tab_more:
-                        switchToMorePageFragment();
+                        switchToPersonPageFragment();
                         break;
 
                 }
