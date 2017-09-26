@@ -5,9 +5,15 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.admin.materialdesigndemo.R;
 import com.example.admin.materialdesigndemo.ViewPagerAdapter;
@@ -36,6 +42,8 @@ public class ListFragment extends Fragment {
     @BindView(R.id.view_pager)
     ViewPager viewPager;
     Unbinder unbinder;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
 
     @Nullable
@@ -43,18 +51,50 @@ public class ListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View mInflater = inflater.inflate(R.layout.list_frament_layout, null);
         unbinder = ButterKnife.bind(this, mInflater);
-//        StatusBarCompat.setStatusBarColor(getActivity(), getResources().getColor(R.color.colorPrimary));
+        toolbar.setTitle("Title");
+        toolbar.setSubtitle("SubTitle");
+        toolbar.setLogo(R.mipmap.ic_launcher);
+
+        //设置导航图标要在setSupportActionBar方法之后
+
+        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
+//        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
+        toolbar.setNavigationIcon(R.mipmap.rb_more_unselect);
         initDate();
         initView();
+        setHasOptionsMenu(true);
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.action_search:
+                        Toast.makeText(getActivity(),"action_search", Toast.LENGTH_LONG).show();
+                        break;
+                    case R.id.action_notifications:
+                        Toast.makeText(getActivity(),"action_notifications", Toast.LENGTH_LONG).show();
+
+                        break;
+                    case R.id.action_settings:
+                        Toast.makeText(getActivity(),"action_settings", Toast.LENGTH_LONG).show();
+
+                        break;
+                }
+
+                return true;
+            }
+        });
 
         return mInflater;
     }
 
-
-
+    @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.base_toolbar_menu, menu);
+    }
 
     private void initView() {
-//        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
         tablayout.addTab(tablayout.newTab().setText("Tab 1"));
         tablayout.addTab(tablayout.newTab().setText("Tab 2"));
         tablayout.addTab(tablayout.newTab().setText("Tab 3"));
