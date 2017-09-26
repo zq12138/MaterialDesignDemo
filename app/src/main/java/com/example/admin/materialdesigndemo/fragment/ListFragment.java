@@ -43,11 +43,15 @@ public class ListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View mInflater = inflater.inflate(R.layout.list_frament_layout, null);
         unbinder = ButterKnife.bind(this, mInflater);
+//        StatusBarCompat.setStatusBarColor(getActivity(), getResources().getColor(R.color.colorPrimary));
         initDate();
         initView();
 
         return mInflater;
     }
+
+
+
 
     private void initView() {
 //        ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);

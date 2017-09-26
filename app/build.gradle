@@ -61,4 +61,7 @@ dependencies {
 
 
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.2.8'
+
+
+    compile 'cn.hugeterry.coordinatortablayout:coordinatortablayout:1.1.0'
 }
