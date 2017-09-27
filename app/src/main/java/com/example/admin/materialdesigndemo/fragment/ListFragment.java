@@ -63,7 +63,6 @@ public class ListFragment extends Fragment {
         initDate();
         initView();
         setHasOptionsMenu(true);
-
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -87,6 +86,8 @@ public class ListFragment extends Fragment {
 
         return mInflater;
     }
+
+
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {

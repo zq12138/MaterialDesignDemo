@@ -13,11 +13,12 @@ import com.example.admin.materialdesigndemo.R;
  * Created by zq on 2017/9/15.
  */
 
-public class PersonFragment extends Fragment{
+public class PersonFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View mInflater=  inflater.inflate(R.layout.layout,null);
+        View mInflater = inflater.inflate(R.layout.person_frament_layout, null);
+
         return mInflater;
     }
 }

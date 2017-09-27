@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="AppTheme" parent="@style/BaseTheme">
+    <style name="BaseTheme.TranslucentStatus" parent="@style/BaseTheme">
 
     </style>
     <style name="BaseTheme" parent="Theme.AppCompat.Light.NoActionBar">
