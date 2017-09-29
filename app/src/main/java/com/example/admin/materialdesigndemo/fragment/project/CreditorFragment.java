@@ -2,7 +2,6 @@ package com.example.admin.materialdesigndemo.fragment.project;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.admin.materialdesigndemo.R;
+import com.example.admin.materialdesigndemo.fragment.BaseFragment;
 import com.example.admin.materialdesigndemo.fragment.adapter.ProjectAdapter;
 import com.example.admin.materialdesigndemo.util.DataUtil;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
@@ -25,7 +25,7 @@ import butterknife.Unbinder;
  * Created by zq on 2017/9/18.
  */
 
-public class CreditorFragment extends Fragment {
+public class CreditorFragment extends BaseFragment{
 
     @BindView(R.id.recycler)
     RecyclerView recycler;

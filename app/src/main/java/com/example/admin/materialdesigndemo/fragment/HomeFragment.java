@@ -2,7 +2,6 @@ package com.example.admin.materialdesigndemo.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,7 +23,7 @@ import butterknife.Unbinder;
  * Created by zq on 2017/9/15.
  */
 
-public class HomeFragment extends Fragment {
+public class HomeFragment extends BaseFragment {
     @BindView(R.id.banner)
     Banner banner;
     Unbinder unbinder;

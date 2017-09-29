@@ -6,8 +6,8 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 
+import com.example.admin.materialdesigndemo.activity.BaseActivity;
 import com.example.admin.materialdesigndemo.fragment.HomeFragment;
 import com.example.admin.materialdesigndemo.fragment.ListFragment;
 import com.example.admin.materialdesigndemo.fragment.MoreFragment;
@@ -25,7 +25,7 @@ import butterknife.ButterKnife;
  * Created by zq on 2017/9/14.
  */
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;

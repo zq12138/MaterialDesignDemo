@@ -32,7 +32,7 @@ import butterknife.Unbinder;
  * Created by zq on 2017/9/15.项目
  */
 
-public class ListFragment extends Fragment {
+public class ListFragment extends BaseFragment {
 
     List<String> stringList;
     List<Fragment> fragmentList;
