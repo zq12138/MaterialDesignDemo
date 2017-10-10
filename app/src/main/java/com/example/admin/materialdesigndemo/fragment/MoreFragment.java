@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.util.Base64;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.example.admin.materialdesigndemo.R;
@@ -29,6 +31,8 @@ public class MoreFragment extends BaseFragment {
     @BindView(R.id.img)
     ImageView img;
     Unbinder unbinder;
+    @BindView(R.id.btn)
+    Button btn;
 
     @Nullable
     @Override
@@ -42,8 +46,19 @@ public class MoreFragment extends BaseFragment {
                 RequestCommand.login(new LoginCallback(MoreFragment.this));
             }
         });
+        btn.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_MOVE) {
+                    v.setY(event.getRawY() - v.getHeight() / 2);
+                    v.setX(event.getRawX() - v.getWidth() / 2);
+                }
+                return false;
+            }
+        });
         return mInflater;
     }
+
     private static class LoginCallback extends DialogCallback<ImageCodeBean, MoreFragment> {
 
 

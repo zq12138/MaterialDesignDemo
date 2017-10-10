@@ -26,8 +26,9 @@
             <android.support.v7.widget.Toolbar
                 android:layout_width="wrap_content"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_marginTop="@dimen/margin_top"
-                ></android.support.v7.widget.Toolbar>
+                android:layout_marginTop="@dimen/margin_top"></android.support.v7.widget.Toolbar>
+
+
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -78,5 +79,17 @@
                 android:text="上推" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:layout_marginTop="80dp"
+        android:layout_gravity="center_horizontal"
+        android:textSize="18sp"
+        android:background="@color/black"
+        app:layout_behavior="com.example.admin.materialdesigndemo.behavior.TextBehavior" />
+
 </android.support.design.widget.CoordinatorLayout>
 
