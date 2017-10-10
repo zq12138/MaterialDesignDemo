@@ -7,4 +7,19 @@
     <dimen name="margin_top">0dp</dimen>
     <dimen name="layout_line_width">0.5dp</dimen>
     <dimen name="header_height">250dp</dimen>
+
+    <!-- 所有可操作元素最小点击区域尺寸：48dp X 48dp。
+    栅格系统的最小单位是8dp，一切距离、尺寸都应该是8dp的整数倍。以下是一些常见的尺寸与距离：-->
+    <dimen name="activity_status_height">24dp</dimen><!--顶部状态栏高度-->
+    <dimen name="appbar_min_height">56dp</dimen><!--Appbar最小高度-->
+    <dimen name="floating_btn_size">56dp</dimen><!--悬浮按钮尺寸56x56dp/40x40dp-->
+    <dimen name="user_head_size">64dp</dimen><!--用户头像尺寸：64x64dp/40x40dp-->
+    <dimen name="img_min_bg">48dp</dimen><!--小图标点击区域：48x48dp-->
+    <dimen name="navigation_right_span">56dp</dimen><!--侧边抽屉到屏幕右边的距离：56dp-->
+    <dimen name="card_span">8dp</dimen><!--卡片间距-->
+    <dimen name="line_y_span">8dp</dimen><!--分隔线上下留白-->
+    <dimen name="view_span">16dp</dimen><!--大多元素的留白距离-->
+    <dimen name="layout_x_line">16dp</dimen><!--屏幕左右对齐基线-->
+    <dimen name="text_left_line">72dp</dimen><!--文字左侧对齐基线-->
+
 </resources>
