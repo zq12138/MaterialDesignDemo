@@ -31,8 +31,8 @@ public class TextBehavior extends CoordinatorLayout.Behavior<TextView> {
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, TextView child, View dependency) {
 
-        int alpha = Math.round(dependency.getY()/2);
-        child.getBackground().setAlpha(alpha);
+//        int alpha = Math.round(dependency.getY()/2);
+//        child.getBackground().setAlpha(alpha);
         return true;
     }
 }

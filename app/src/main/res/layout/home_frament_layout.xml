@@ -5,6 +5,7 @@
     android:layout_height="match_parent">
 
     <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="256dp">
 
@@ -15,7 +16,6 @@
             app:expandedTitleMarginStart="64dp"
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
-
             <com.youth.banner.Banner
                 android:id="@+id/banner"
                 android:layout_width="match_parent"
@@ -24,10 +24,23 @@
                 app:layout_collapseParallaxMultiplier="0.7" />
 
             <android.support.v7.widget.Toolbar
-                android:layout_width="wrap_content"
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                android:layout_marginTop="@dimen/margin_top"></android.support.v7.widget.Toolbar>
+                android:layout_marginTop="@dimen/margin_top">
 
+            </android.support.v7.widget.Toolbar>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="32dp"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_behavior="com.example.admin.materialdesigndemo.behavior.TextBehavior"
+                app:layout_collapseMode="pin" />
 
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
@@ -35,7 +48,6 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -80,16 +92,28 @@
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 
-    <TextView
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/fab"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_margin="@dimen/activity_vertical_margin"-->
+        <!--app:layout_anchor="@id/app_bar"-->
+        <!--app:layout_anchorGravity="bottom|end"-->
+        <!--app:srcCompat="@android:drawable/ic_dialog_email"-->
+        <!--/>-->
+
+
+    <ImageView
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textColor="@color/white"
-        android:layout_marginTop="80dp"
-        android:layout_gravity="center_horizontal"
-        android:textSize="18sp"
-        android:background="@color/black"
-        app:layout_behavior="com.example.admin.materialdesigndemo.behavior.TextBehavior" />
+        android:layout_margin="@dimen/activity_vertical_margin"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_behavior="com.example.admin.materialdesigndemo.behavior.ImageViewBehavior"
+        android:background="@mipmap/head"
+        />
+
 
 </android.support.design.widget.CoordinatorLayout>
 

@@ -1,7 +1,10 @@
 package com.example.admin.materialdesigndemo.fragment;
 
+import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,15 +31,19 @@ public class HomeFragment extends BaseFragment {
     Banner banner;
     Unbinder unbinder;
     List<String> images;
+//    @BindView(R.id.toolbar)
+//    Toolbar toolbar;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View mInflater = inflater.inflate(R.layout.home_frament_layout, null);
         unbinder = ButterKnife.bind(this, mInflater);
-
+//        getBaseActivity().setSupportActionBar(toolbar);
         initBanner();
         bannerListener();
+//        Dialog dialog;
+//        dialog.setContentView();
         return mInflater;
     }
 
@@ -44,7 +51,7 @@ public class HomeFragment extends BaseFragment {
         banner.setOnBannerListener(new OnBannerListener() {
             @Override
             public void OnBannerClick(int position) {
-                Toast.makeText(getActivity(), position+"-", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), position + "-", Toast.LENGTH_LONG).show();
             }
         });
     }
