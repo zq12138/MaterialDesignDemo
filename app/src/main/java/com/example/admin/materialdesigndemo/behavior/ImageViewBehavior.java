@@ -35,18 +35,21 @@ public class ImageViewBehavior extends CoordinatorLayout.Behavior<ImageView> {
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, final ImageView child, final View dependency) {
-//        Log.d("tag", dependency.getY() + "- -" + dependency.getHeight());//0--- -495
-        if (dependency.getY() >= -300) {
-            alpha = 255 * dependency.getY() / -495;
-            scaleY = 1 * dependency.getY() / -495;
-            child.getBackground().setAlpha(255 - (int) alpha);
-            child.setScaleY(1 - scaleY);
-            child.setScaleX(1 - scaleY);
-        } else {
-            child.setScaleY(0);
-            child.setScaleX(0);
-            child.getBackground().setAlpha(0);
-        }
+        AppBarLayout barLayout = (AppBarLayout) dependency;
+        Log.i("tag", "dependency.getY" + barLayout.getY() + " barLayout.getTotalScrollRange()" + barLayout.getTotalScrollRange()
+
+                + " barLayout.getBottom()" + barLayout.getBottom());
+//        if (dependency.getY() >= -300) {
+        alpha = 255 * dependency.getY() / -barLayout.getTotalScrollRange();
+        scaleY = 1 * dependency.getY() / -barLayout.getTotalScrollRange();
+        child.getBackground().setAlpha(255 - (int) alpha);
+        child.setScaleY(1 - scaleY);
+        child.setScaleX(1 - scaleY);
+//        } else {
+//            child.setScaleY(0);
+//            child.setScaleX(0);
+//            child.getBackground().setAlpha(0);
+//        }
 
         return true;
     }

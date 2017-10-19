@@ -16,7 +16,7 @@
     <dimen name="user_head_size">64dp</dimen><!--用户头像尺寸：64x64dp/40x40dp-->
     <dimen name="img_min_bg">48dp</dimen><!--小图标点击区域：48x48dp-->
     <dimen name="navigation_right_span">56dp</dimen><!--侧边抽屉到屏幕右边的距离：56dp-->
-    <dimen name="card_span">8dp</dimen><!--卡片间距-->
+    <dimen name="card_span">51dp</dimen><!--卡片间距-->
     <dimen name="line_y_span">8dp</dimen><!--分隔线上下留白-->
     <dimen name="view_span">16dp</dimen><!--大多元素的留白距离-->
     <dimen name="layout_x_line">16dp</dimen><!--屏幕左右对齐基线-->

@@ -54,9 +54,7 @@ public class ListFragment extends BaseFragment {
         toolbar.setTitle("Title");
         toolbar.setSubtitle("SubTitle");
         toolbar.setLogo(R.mipmap.ic_launcher);
-
         //设置导航图标要在setSupportActionBar方法之后
-
         ((AppCompatActivity) getActivity()).setSupportActionBar(toolbar);
 //        toolbar.setNavigationIcon(R.mipmap.ic_launcher);
         toolbar.setNavigationIcon(R.mipmap.rb_more_unselect);
@@ -79,11 +77,9 @@ public class ListFragment extends BaseFragment {
 
                         break;
                 }
-
                 return true;
             }
         });
-
         return mInflater;
     }
 

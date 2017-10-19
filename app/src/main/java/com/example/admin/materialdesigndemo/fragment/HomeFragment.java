@@ -1,21 +1,24 @@
 package com.example.admin.materialdesigndemo.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.admin.materialdesigndemo.R;
+import com.example.admin.materialdesigndemo.activity.UserInfoActivity;
 import com.example.admin.materialdesigndemo.fragment.adapter.ProjectAdapter;
 import com.example.admin.materialdesigndemo.util.DataUtil;
 import com.example.admin.materialdesigndemo.util.GlideImageLoader;
-import com.example.admin.materialdesigndemo.widget.RecyclerViewTouch;
 import com.youth.banner.Banner;
 import com.youth.banner.listener.OnBannerListener;
 
@@ -24,6 +27,7 @@ import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
 
 /**
@@ -40,13 +44,17 @@ public class HomeFragment extends BaseFragment {
     @BindView(R.id.swipe_refresh)
     SwipeRefreshLayout swipeRefresh;
     LinearLayoutManager mLayoutManager;
+    @BindView(R.id.fab)
+    ImageView fab;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View mInflater = inflater.inflate(R.layout.home_frament_layout, null);
         unbinder = ButterKnife.bind(this, mInflater);
-//        getBaseActivity().setSupportActionBar(toolbar);
+        getBaseActivity().setSupportActionBar(toolbar);
         initBanner();
         bannerListener();
         initSwipeRefresh();
@@ -121,5 +129,15 @@ public class HomeFragment extends BaseFragment {
     public void onDestroyView() {
         super.onDestroyView();
         unbinder.unbind();
+    }
+
+    @OnClick(R.id.fab)
+    public void onViewClicked() {
+
+        Intent intent = new Intent();
+        intent.setClass(getActivity(), UserInfoActivity.class);
+        startActivity(intent);
+
+        Toast.makeText(getActivity(), "--", Toast.LENGTH_LONG).show();
     }
 }

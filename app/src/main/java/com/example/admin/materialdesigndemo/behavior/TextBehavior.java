@@ -18,6 +18,7 @@ public class TextBehavior extends CoordinatorLayout.Behavior<TextView> {
 
     private int mFrameMaxHeight = 100;
     private int mStartY;
+    private float textSize;
 
     public TextBehavior(Context context, AttributeSet attributeSet) {
         super(context, attributeSet);
@@ -30,9 +31,8 @@ public class TextBehavior extends CoordinatorLayout.Behavior<TextView> {
 
     @Override
     public boolean onDependentViewChanged(CoordinatorLayout parent, TextView child, View dependency) {
-
-//        int alpha = Math.round(dependency.getY()/2);
-//        child.getBackground().setAlpha(alpha);
+        textSize = 18 * dependency.getY() / -55;
+        child.setTextSize(textSize);
         return true;
     }
 }
